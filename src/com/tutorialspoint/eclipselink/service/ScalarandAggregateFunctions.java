@@ -6,7 +6,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class ScalarandAggregateFunctions {
+public class ScalarAndAggregateFunctions {
    public static void main( String[ ] args ) {
    
       EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
