@@ -4,12 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table
-public class Employee {
+@NamedQuery(query = "Select e from Employee e where e.eid = :id", name = "find employee by id")
 
+public class Employee {
    @Id
    @GeneratedValue(strategy = GenerationType.AUTO) 	
    
@@ -25,7 +27,7 @@ public class Employee {
       this.salary = salary;
       this.deg = deg;
    }
-
+   
    public Employee( ) {
       super();
    }
@@ -37,7 +39,7 @@ public class Employee {
    public void setEid(int eid) {
       this.eid = eid;
    }
-   
+
    public String getEname( ) {
       return ename;
    }
