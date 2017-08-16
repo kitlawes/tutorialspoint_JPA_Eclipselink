@@ -26,7 +26,7 @@ public class OneToOne {
    employee.setEname("Satish");
    employee.setSalary(45000.0);
    employee.setDeg("Technical Writer");
-   employee.setDepartment(department);
+//   employee.setDepartment(department);
 
    //Store Employee
    entitymanager.persist(employee);
