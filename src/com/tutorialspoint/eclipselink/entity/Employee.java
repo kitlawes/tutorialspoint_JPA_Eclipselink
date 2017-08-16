@@ -4,22 +4,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
 @Table
-@NamedQuery(query = "Select e from Employee e where e.eid = :id", name = "find employee by id")
+@Entity
+public class Employee{
 
-public class Employee {
    @Id
-   @GeneratedValue(strategy = GenerationType.AUTO) 	
+   @GeneratedValue( strategy= GenerationType.AUTO ) 	
    
    private int eid;
    private String ename;
    private double salary;
    private String deg;
    
+   @ManyToOne
+   private Department department;
+
    public Employee(int eid, String ename, double salary, String deg) {
       super( );
       this.eid = eid;
@@ -27,7 +29,7 @@ public class Employee {
       this.salary = salary;
       this.deg = deg;
    }
-   
+
    public Employee( ) {
       super();
    }
@@ -36,7 +38,7 @@ public class Employee {
       return eid;
    }
    
-   public void setEid(int eid) {
+   public void setEid(int eid)  {
       this.eid = eid;
    }
 
@@ -63,9 +65,12 @@ public class Employee {
    public void setDeg(String deg) {
       this.deg = deg;
    }
-   
-   @Override
-   public String toString() {
-      return "Employee [eid=" + eid + ", ename=" + ename + ", salary=" + salary + ", deg=" + deg + "]";
+
+   public Department getDepartment() {
+      return department;
+   }
+
+   public void setDepartment(Department department) {
+      this.department = department;
    }
 }
