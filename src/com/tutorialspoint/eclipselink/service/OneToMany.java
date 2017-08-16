@@ -49,7 +49,7 @@ public class OneToMany {
    //Create Department Entity
    Department department = new Department();
    department.setName("Development");
-   department.setEmployeelist(emplist);
+//   department.setEmployeelist(emplist);
 
    //Store Department
    entitymanager.persist(department);

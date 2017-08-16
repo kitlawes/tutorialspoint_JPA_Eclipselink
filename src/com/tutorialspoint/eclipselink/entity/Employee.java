@@ -4,17 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Employee {
 
    @Id
    @GeneratedValue( strategy= GenerationType.AUTO ) 	
-
    private int eid;
    private String ename;
    private double salary;
    private String deg;
+
+   @OneToOne
+   private Department department;
 
    public Employee(int eid, String ename, double salary, String deg) {
       super( );
@@ -58,5 +61,13 @@ public class Employee {
    
    public void setDeg(String deg) {
       this.deg = deg;
+   }
+
+   public Department getDepartment() {
+      return department;
+   }
+
+   public void setDepartment(Department department) {
+      this.department = department;
    }	
 }
