@@ -2,11 +2,8 @@ package com.tutorialspoint.eclipselink.entity;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity
-@PrimaryKeyJoinColumn(referencedColumnName="sid")
-
 public class NonTeachingStaff extends Staff {
    private String areaexpertise;
 
